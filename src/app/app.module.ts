@@ -7,20 +7,23 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import {AuthService } from './shared/auth.service';
+import { MembersComponent } from './members/members.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
-  providers: [AuthService],
   declarations: [
-    AppComponent
+    AppComponent,
+    MembersComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase, 'mem'),
     AngularFireDatabaseModule,
     AngularFireAuthModule
 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
