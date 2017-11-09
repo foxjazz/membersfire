@@ -1,0 +1,28 @@
+<button (click)="loginWithGoogle()">Login with Google</button>
+<ul>
+  <li class="text" *ngFor="let topic of topics | async">
+    {{topic.$value}}
+  </li>
+</ul>
+
+<h1 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h1>
+
+<div *ngIf="!authService.user">
+  Welcome {{ (authService.user | async)?.email }}
+
+  <input type="text" [(ngModel)]="email">
+  <input type="password" [(ngModel)]="password" placeholder="email">
+  <div></div>
+  {{email}} : {{password}}
+  <button (click)="signup()" [disabled]="!email || !password">
+    Signup
+  </button>
+
+  <button (click)="login()" [disabled]="!email || !password">
+    Login
+  </button>
+</div>
+
+<button (click)="logout()" *ngIf="authService.user | async">
+  Logout
+</button>

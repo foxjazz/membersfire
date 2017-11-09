@@ -6,8 +6,7 @@ import {ActivatedRoute, ParamMap, Route} from "@angular/router";
 @Component({
   selector: 'mem-authorize',
   templateUrl: './authorize.component.html',
-  styleUrls: ['./authorize.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./authorize.component.css']
 })
 export class AuthorizeComponent implements OnInit {
   db: any;
@@ -24,13 +23,10 @@ export class AuthorizeComponent implements OnInit {
     });
   }
   ngOnInit() {
+    console.log("routed to auth");
     this.db = firebase.database();
-    this.route.paramMap
-      .switchMap((params: ParamMap) =>
-        this.email = params.get('email')
-      )
-
-      .subscribe();
+    this.email = this.route.snapshot.paramMap.get('email');
+    this.readUserData(this.email);
   }
 
 }

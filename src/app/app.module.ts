@@ -11,15 +11,17 @@ import { MembersComponent } from './members/members.component';
 import {FormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
 import { AuthorizeComponent } from './authorize/authorize.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [{path: 'Members', component: MembersComponent},
-  {path: 'auth/:email', component: AuthorizeComponent}];
+  {path: 'auth/:email', component: AuthorizeComponent}, {path: 'login', component: LoginComponent}];
 
 @NgModule({
   declarations: [
     AppComponent,
     MembersComponent,
-    AuthorizeComponent
+    AuthorizeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

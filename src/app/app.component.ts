@@ -27,36 +27,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.auth.afAuth.authState.subscribe(
       (user) => this.user = user);
+
   }
-  signup() {
-    console.log("trying:");
-    this.firebaseAuth.auth
-      .createUserWithEmailAndPassword(this.email, this.password)
-      .then(value => {
-        console.log('Success!', value);
-      })
-      .catch(err => {
-        console.log('Something went wrong:', err.message);
-      });
-  }
-  login() {
-    this.firebaseAuth
-      .auth
-      .signInWithEmailAndPassword(this.email, this.password)
-      .then(value => {
-        this.authorized = true;
-        this.router.navigate(['auth/' + this.email]);
-        console.log('Nice, it worked!');
-      })
-      .catch(err => {
-        this.authorized = false;
-        console.log('Something went wrong:', err.message);
-      });
-  }
-  logout() {
-    this.firebaseAuth
-      .auth
-      .signOut();
-  }
+
 
 }
