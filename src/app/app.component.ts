@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
       .signInWithEmailAndPassword(this.email, this.password)
       .then(value => {
         this.authorized = true;
-        this.router.navigate(['Members']);
+        this.router.navigate(['auth/' + this.email]);
         console.log('Nice, it worked!');
       })
       .catch(err => {

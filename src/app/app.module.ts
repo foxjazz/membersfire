@@ -13,7 +13,7 @@ import {RouterModule, Routes} from "@angular/router";
 import { AuthorizeComponent } from './authorize/authorize.component';
 
 const appRoutes: Routes = [{path: 'Members', component: MembersComponent},
-  {path: 'auth', component: AuthorizeComponent}];
+  {path: 'auth/:email', component: AuthorizeComponent}];
 
 @NgModule({
   declarations: [
