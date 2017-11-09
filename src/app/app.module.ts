@@ -13,6 +13,7 @@ import {RouterModule, Routes} from "@angular/router";
 import { AuthorizeComponent } from './authorize/authorize.component';
 import { LoginComponent } from './login/login.component';
 import { TrymeComponent } from './tryme/tryme.component';
+import { MainComponent } from './main/main.component';
 
 const appRoutes: Routes = [{path: 'Members', component: MembersComponent},
   {path: 'auth/:email', component: AuthorizeComponent}, {path: 'login', component: LoginComponent},
@@ -24,7 +25,8 @@ const appRoutes: Routes = [{path: 'Members', component: MembersComponent},
     MembersComponent,
     AuthorizeComponent,
     LoginComponent,
-    TrymeComponent
+    TrymeComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import { AuthService } from './shared/auth.service';
-import {AngularFireAuth} from "angularfire2/auth";
 import {Router} from "@angular/router";
 
 @Component({
@@ -16,8 +15,10 @@ export class AppComponent implements OnInit {
   authService: AuthService;
   authorized: boolean;
   constructor(
-    public auth: AuthService, private firebaseAuth: AngularFireAuth, private router: Router) {
-    this.authService = auth; this.password="greeper"; this.email="fox21@foxjazz.net";
+    public auth: AuthService, private router: Router) {
+    this.authService = auth;
+    this.password = "greeper";
+    this.email = "fox21@foxjazz.net";
     this.authorized = false;
   }
 
@@ -25,8 +26,7 @@ export class AppComponent implements OnInit {
     this.auth.loginWithGoogle();
   }
   ngOnInit() {
-    this.auth.afAuth.authState.subscribe(
-      (user) => this.user = user);
+
 
   }
 
