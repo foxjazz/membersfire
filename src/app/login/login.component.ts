@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       .signInWithEmailAndPassword(this.email, this.password)
       .then(value => {
         this.authorized = true;
-        this.router.navigate(['/auth' ,  this.email]);
+        this.router.navigate(['/tryme' ,  'test']);
         console.log('Nice, it worked!');
       })
       .catch(err => {

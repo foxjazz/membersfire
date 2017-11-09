@@ -12,16 +12,19 @@ import {FormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
 import { AuthorizeComponent } from './authorize/authorize.component';
 import { LoginComponent } from './login/login.component';
+import { TrymeComponent } from './tryme/tryme.component';
 
 const appRoutes: Routes = [{path: 'Members', component: MembersComponent},
-  {path: 'auth/:email', component: AuthorizeComponent}, {path: 'login', component: LoginComponent}];
+  {path: 'auth/:email', component: AuthorizeComponent}, {path: 'login', component: LoginComponent},
+  {path: 'tryme/:email', component: TrymeComponent}, {path: 'tryme', component: TrymeComponent}];
 
 @NgModule({
   declarations: [
     AppComponent,
     MembersComponent,
     AuthorizeComponent,
-    LoginComponent
+    LoginComponent,
+    TrymeComponent
   ],
   imports: [
     BrowserModule,
