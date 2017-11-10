@@ -7,6 +7,10 @@ import { Observable } from 'rxjs/Observable';
 export class AuthService {
   private authState: Observable<firebase.User>
   private currentUser: firebase.User = null;
+
+  public user;
+
+
   constructor(public afAuth: AngularFireAuth) {
     this.authState = this.afAuth.authState;
     this.authState.subscribe(user => {

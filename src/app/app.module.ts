@@ -16,8 +16,8 @@ import { TrymeComponent } from './tryme/tryme.component';
 import { MainComponent } from './main/main.component';
 
 const appRoutes: Routes = [{path: 'Members', component: MembersComponent},
-  {path: 'auth/:email', component: AuthorizeComponent}, {path: 'login', component: LoginComponent},
-  {path: 'tryme/:email', component: TrymeComponent}, {path: 'tryme', component: TrymeComponent}];
+  {path: 'auth', component: AuthorizeComponent}, {path: 'login', component: LoginComponent},
+  {path: '', component: LoginComponent}, {path: 'main', component: MainComponent}];
 
 @NgModule({
   declarations: [

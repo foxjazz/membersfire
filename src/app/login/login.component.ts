@@ -10,11 +10,12 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  user = null;
+  username: string;
   email: string;
   password: string;
   authService: AuthService;
   authorized: boolean;
+  testuser: any;
   constructor(public auth: AuthService, private firebaseAuth: AngularFireAuth, private router: Router) {
     this.authService = auth; this.password="greeper"; this.email="fox21@foxjazz.net";
     this.authorized = false;
@@ -36,7 +37,8 @@ export class LoginComponent implements OnInit {
       .signInWithEmailAndPassword(this.email, this.password)
       .then(value => {
         this.authorized = true;
-        this.router.navigate(['/tryme' ,  'test']);
+        this.auth.user = this.username;
+        this.router.navigate(['auth']);
         console.log('Nice, it worked!');
       })
       .catch(err => {
@@ -51,7 +53,7 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit() {
     this.auth.afAuth.authState.subscribe(
-      (user) => this.user = user);
+      (user) => this.testuser = user);
   }
 
 }
