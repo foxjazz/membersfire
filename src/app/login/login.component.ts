@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   authorized: boolean;
   testuser: any;
   constructor(public auth: AuthService, private firebaseAuth: AngularFireAuth, private router: Router) {
-    this.authService = auth; this.password="greeper"; this.email="fox21@foxjazz.net";
+    this.authService = auth; this.password="channel"; this.email="fox21@foxjazz.net";
     this.authorized = false;
   }
   signup() {
